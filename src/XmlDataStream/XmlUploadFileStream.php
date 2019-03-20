@@ -6,7 +6,9 @@
  * Time: 08:59
  */
 
-namespace Snowdog\DevTest\Component\SitemapParser;
+namespace Stefantoczek\SitemapParser\XmlDataStream;
+
+use Stefantoczek\SitemapParser\Interfaces\XmlDataStreamInterface;
 
 class XmlUploadFileStream implements XmlDataStreamInterface
 {
