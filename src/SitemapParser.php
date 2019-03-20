@@ -40,6 +40,8 @@ class SitemapParser
     public function setWebsiteDatabaseSetter(WebsiteDatabaseInterface $interface)
     {
         $this->websiteManager = $interface;
+
+        return $this;
     }
 
     /**
