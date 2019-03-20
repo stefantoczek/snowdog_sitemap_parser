@@ -1,0 +1,24 @@
+{
+    "name": "stefantoczek/snowdog_sitemap_parser",
+    "description": "Boilerplate package for creating other packages.",
+    "keywords": ["composer", "package", "sitemap", "xml parser"],
+    "license": "DBAD",
+    "authors": [
+        {
+            "name": "Stefan Toczek",
+            "email": "stefan.toczek@gate-software.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=7.1"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stefantoczek\\SitemapParser\\": "src/"
+        }
+    }
+}
