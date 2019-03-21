@@ -47,7 +47,7 @@ class XmlUploadFileStream implements XmlDataStreamInterface
         $this->dataBuffer = null;
     }
 
-    private function loadUploadedFileData()
+    private function loadUploadedFileData(): void
     {
         $this->dataBuffer = file_get_contents($this->uploadedFile['tmp_name']);
     }

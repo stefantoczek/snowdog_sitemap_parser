@@ -8,10 +8,6 @@
 
 namespace Stefantoczek\SitemapParser;
 
-use Snowdog\DevTest\Model\PageManager;
-use Snowdog\DevTest\Model\User;
-use Snowdog\DevTest\Model\UserManager;
-use Snowdog\DevTest\Model\WebsiteManager;
 use Stefantoczek\SitemapParser\Interfaces\WebsiteDatabaseInterface;
 use Stefantoczek\SitemapParser\Parser\SitemapXmlParser;
 use Stefantoczek\SitemapParser\Parser\XmlParser;
@@ -25,9 +21,6 @@ class SitemapParser
     /** @var array */
     private $parsedSitemap;
     private $websiteManager;
-    private $pageManager;
-
-    private $user;
 
     public function __construct(
         SitemapXmlParser $sitemapXmlParser,
@@ -48,7 +41,7 @@ class SitemapParser
      * @return array|null
      */
     public
-    function getParsedSitemap()
+    function getParsedSitemap(): ?array
     {
         if ($this->parsedSitemap === null) {
             $this->parseSitemap();
@@ -61,7 +54,7 @@ class SitemapParser
      *
      */
     public
-    function insertDataToDatabase()
+    function insertDataToDatabase(): void
     {
         $website = $this->insertWebsiteToDatabase();
         if ($website) {
@@ -79,7 +72,7 @@ class SitemapParser
     private
     function insertPagesToDatabase(
         $parentWebsite
-    ) {
+    ): void {
         foreach ($this->parsedSitemap['pages'] as $page) {
             if ($page !== '') {
                 $this->websiteManager->insertPage($parentWebsite, $page);
@@ -90,7 +83,7 @@ class SitemapParser
     public
     function loadFromFile(
         $filename
-    ) {
+    ): SitemapParser {
         $stream = new XmlFileStream($filename);
 
         return $this->loadFromStream($stream);
@@ -104,7 +97,7 @@ class SitemapParser
     public
     function loadFromStream(
         $stream
-    ) {
+    ): self {
         $this->stream = $stream;
         $this->parseSitemap();
 

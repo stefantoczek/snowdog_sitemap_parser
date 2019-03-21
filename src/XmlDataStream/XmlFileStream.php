@@ -50,7 +50,7 @@ class XmlFileStream implements XmlDataStreamInterface
         return $this->dataBuffer;
     }
 
-    private function loadFileData()
+    private function loadFileData(): void
     {
         $this->dataBuffer = file_get_contents($this->fileName);
     }

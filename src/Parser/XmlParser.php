@@ -51,7 +51,7 @@ class XmlParser implements XmlParserInterface
     /**
      * @throws \Exception
      */
-    private function parseRawData()
+    private function parseRawData(): void
     {
         $this->parsedXmlData = simplexml_load_string($this->rawData);
         if ($this->parsedXmlData === false) {
@@ -60,7 +60,7 @@ class XmlParser implements XmlParserInterface
 
     }
 
-    private function handleRuntimeError()
+    private function handleRuntimeError(): void
     {
         $errorString = 'Error occured while parsing XML file, please validate it & try again!';
 

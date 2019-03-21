@@ -36,7 +36,7 @@ class SitemapXmlParser
      *
      * @return array
      */
-    public function getRawData()
+    public function getRawData(): array
     {
         if ($this->rawData === null) {
             $this->rawData = $this->dataStream->read();
@@ -59,7 +59,7 @@ class SitemapXmlParser
         return $this->parsedXmlData;
     }
 
-    public function getWebsiteData()
+    public function getWebsiteData(): array
     {
         $this->getParsedXmlData();
 
@@ -70,7 +70,7 @@ class SitemapXmlParser
         return $this->websiteData;
     }
 
-    private function parseSingleItem($item)
+    private function parseSingleItem($item): void
     {
         if ($this->websiteData['hostname'] === null) {
             $this->websiteData['hostname'] = parse_url((string)$item->loc, PHP_URL_HOST);
@@ -88,7 +88,7 @@ class SitemapXmlParser
      *
      * @return \Stefantoczek\SitemapParser\Parser\SitemapXmlParser
      */
-    public function setStream(XmlDataStreamInterface $dataStream)
+    public function setStream(XmlDataStreamInterface $dataStream): SitemapXmlParser
     {
         $this->dataStream = $dataStream;
 
@@ -100,7 +100,7 @@ class SitemapXmlParser
      *
      * @return \Stefantoczek\SitemapParser\Parser\SitemapXmlParser
      */
-    public function setXmlParser(XmlParserInterface $xmlParser)
+    public function setXmlParser(XmlParserInterface $xmlParser): SitemapXmlParser
     {
         $this->xmlParser = $xmlParser;
 
