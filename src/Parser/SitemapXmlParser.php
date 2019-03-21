@@ -32,11 +32,11 @@ class SitemapXmlParser
     }
 
     /**
-     * returns parsed data
+     * returns raw data from stream
      *
-     * @return array
+     * @return string
      */
-    public function getRawData(): array
+    public function getRawData(): string
     {
         if ($this->rawData === null) {
             $this->rawData = $this->dataStream->read();
