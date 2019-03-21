@@ -13,7 +13,7 @@ interface XmlDataStreamInterface
     /**
      * initializes datastream
      *
-     * @param $streamName
+     * @param $streamName string
      *
      * @return mixed
      */
@@ -21,8 +21,9 @@ interface XmlDataStreamInterface
 
     /**
      * returns data read from stream
+     *sitemap_import.phtml
      *
-     * @return mixed
+     * @return string|null
      */
-    public function read();
+    public function read(): ?string;
 }

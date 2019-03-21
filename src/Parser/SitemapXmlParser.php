@@ -13,13 +13,18 @@ use Stefantoczek\SitemapParser\Interfaces\XmlParserInterface;
 
 class SitemapXmlParser
 {
+    /** @var XmlParserInterface $xmlParser */
     private $xmlParser;
 
+    /** @var string $rawData */
     private $rawData;
 
+    /** @var array $parsedXmlData */
     private $parsedXmlData;
+    /** @var \Stefantoczek\SitemapParser\Interfaces\XmlDataStreamInterface */
     private $dataStream;
 
+    /** @var array $websiteData */
     private $websiteData;
 
     public function __construct()
