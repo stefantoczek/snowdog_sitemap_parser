@@ -41,7 +41,7 @@ class XmlFileStream implements XmlDataStreamInterface
     /**
      * @return mixed|null
      */
-    public function read()
+    public function read(): ?string
     {
         if ($this->dataBuffer === null) {
             $this->loadFileData();

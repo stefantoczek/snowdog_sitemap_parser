@@ -32,7 +32,7 @@ class XmlUploadFileStream implements XmlDataStreamInterface
         $this->isValidFile = true;
     }
 
-    public function read()
+    public function read(): ?string
     {
         if ($this->dataBuffer === null && $this->isValidFile) {
             $this->loadUploadedFileData();
